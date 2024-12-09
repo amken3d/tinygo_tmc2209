@@ -1,6 +1,6 @@
 package tmc2209
 
-import log "github.com/sirupsen/logrus"
+import "log"
 
 func CalculateCRC(data []byte) uint8 {
 	crc := uint8(0)

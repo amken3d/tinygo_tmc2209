@@ -1,10 +1,10 @@
 # TMC2209 Go Package
 
 This package provides a lightweight interface to communicate with the TMC2209 stepper motor driver via UART. It is designed to be used with microcontrollers and supports both default UART communication and custom interface implementations for flexibility.
-
+Currently this package only implements the communications with TMC2209. Functions to handle specific operations such as EnableStealthChop() etc. will need to be implemented by the user. 
 ## Features
 - **UART Communication:** Standard communication through UART for controlling the TMC2209 driver.
-- **Custom Communication Interfaces:** Allows custom implementations of communication interfaces (e.g., USB, SPI, etc.) via the `RegisterComm` interface.
+- **Custom Communication Interfaces:** Allows custom implementations of communication interfaces (e.g., USB, SPI, etc.) via the `RegisterComm` interface. The usecase for this is if you have host system that can "talk" to the microcontroller connected to the TMC2209
 - **Error Handling:** Lightweight error handling for TinyGo compatibility.
 - **Register Access:** Provides methods to read and write registers on the TMC2209.
 
@@ -14,12 +14,7 @@ This package provides a lightweight interface to communicate with the TMC2209 st
 - **TinyGo**: This package is optimized for TinyGo, which is suitable for running Go on microcontrollers and embedded systems.
 - **UART Communication**: For microcontrollers with UART support, such as ESP32, STM32, and Raspberry Pi Pico.
 
-### Installing the Package
 
-```bash
-go get github.com/amken3d/tmc2209
-
-```
 ## Usage
 ### Using with Microcontrollers (Default UART)
 
@@ -161,11 +156,8 @@ Example Error:
 
 ```CustomError("communication interface not set")```
 
-### Notes for Microcontroller Users
 
-- TinyGo Compatibility: The package is designed for use with TinyGo, which runs on microcontrollers such as the Raspberry Pi Pico, ESP32, and STM32.
-- UART Configuration: Make sure your microcontroller's UART pins and baud rate are correctly configured. The package uses machine.UART0 by default in TinyGo.
-- Garbage Collection: TinyGo does have garbage collection,but be mindful of memory usage. The package avoids complex memory management to ensure compatibility with embedded systems.
+Created by Amken3d
+info@amken3d.us
 
- Feel free to open issues or submit pull requests if you encounter any problems or would like to contribute to the package.
  

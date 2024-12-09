@@ -3,7 +3,6 @@ package tmc2209
 func MoveAtVelocity(microstepsPerPeriod int32) {
 	// Write velocity to the relevant register
 }
-
 func MoveUsingStepDirInterface() {
 	// Set the interface to use step/direction interface
 }

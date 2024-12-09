@@ -1,6 +1,6 @@
 package tmc2209
 
-import log "github.com/sirupsen/logrus"
+import "log"
 
 // TMC2209 Register addresses
 const (
